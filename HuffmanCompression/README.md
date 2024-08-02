@@ -1,9 +1,6 @@
 # Huffman Compression and Decompression
-Welcome to the Huffman Compression and Decompression project! This project implements the Huffman algorithm, a popular method for lossless data compression.
-
-## Table of Contents
--[Installation](##Installation)
--[Usage](##Usage)
+Welcome to the Huffman Compression and Decompression project! 
+This project implements the Huffman algorithm, a popular method for lossless data compression.
 
 ## Installation
 To get started, follow these steps:

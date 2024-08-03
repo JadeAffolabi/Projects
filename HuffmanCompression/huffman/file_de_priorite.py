@@ -19,7 +19,7 @@ class FileDePriorite:
     def est_vide(self) -> bool:
         """
         est_vide Renvoie l'état de la liste
-
+        
         Returns
         -------
         bool

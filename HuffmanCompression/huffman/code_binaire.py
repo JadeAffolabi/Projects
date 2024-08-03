@@ -12,6 +12,8 @@ class CodeBinaire:
     """ Classe qui représente un code binaire"""
 
     def __init__(self, bit: Bit, *bits: Bit):
+        if not isinstance(bit, Bit) or not all((isinstance(b, Bit) for b in bits)):
+            raise TypeError("Un code binaire ne doit être constitué que de Bit")
         self._bits = [bit] + list(bits)
 
     def ajouter(self, bit: Bit) -> None:
@@ -23,6 +25,8 @@ class CodeBinaire:
         bit : Bit
             Le bit à ajouter
         """
+        if not isinstance(bit, Bit):
+            raise TypeError("Un code binaire ne doit être constitué que de Bit")
         self._bits.append(bit)
 
     @property
@@ -41,6 +45,7 @@ class CodeBinaire:
         return len(self._bits)
 
     def __setitem__(self, indice_ou_slice: int|slice, bit_ou_bits: Bit|list[Bit]|tuple[Bit]|Self):
+
         if isinstance(indice_ou_slice, slice):
             if isinstance(bit_ou_bits, Bit):
                 self._bits[indice_ou_slice] = (bit_ou_bits for i in self._bits[indice_ou_slice])
@@ -48,6 +53,8 @@ class CodeBinaire:
                 if isinstance(bit_ou_bits, CodeBinaire):
                     self._bits[indice_ou_slice] = bit_ou_bits.bits
                 elif isinstance(bit_ou_bits, (list, tuple)):
+                    if not all((not isinstance(b) for b in bit_ou_bits)):
+                        raise TypeError("Un code binaire ne doit être constitué que de Bit")
                     self._bits[indice_ou_slice] = bit_ou_bits
         else:
             assert isinstance(bit_ou_bits, Bit), f"{bit_ou_bits} devrait être un Bit"
@@ -61,6 +68,8 @@ class CodeBinaire:
         return self._bits[indice_ou_slice]
 
     def __delitem__(self, indice_ou_slice: int|slice) -> None:
+        if len(self) == 1:
+            raise AuMoinsUnBitErreur("Un code binaire doit posséder au moins un bit")
         del self._bits[indice_ou_slice]
 
     def __iter__(self):
@@ -89,3 +98,6 @@ class CodeBinaire:
     def __str__(self):
         description = [str(b.value) for b in self._bits]
         return " ".join(description)
+
+class AuMoinsUnBitErreur(Exception):
+    """ Exception Pour éviter d'avoir un code binaire vide"""

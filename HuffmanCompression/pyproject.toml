@@ -1,14 +1,15 @@
 [tool.poetry]
-name = "huffmancompression"
+name = "HuffmanCompression"
 version = "0.1.0"
 description = "A project on huffman compression and decompression"
 authors = ["Jade Affolabi"]
 readme = "README.md"
-package-mode = false
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
 typing-extensions = "^4.12.2"
+pytest = "^8.3.2"
 
 
 [build-system]

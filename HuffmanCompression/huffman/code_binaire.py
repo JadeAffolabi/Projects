@@ -53,7 +53,7 @@ class CodeBinaire:
                 if isinstance(bit_ou_bits, CodeBinaire):
                     self._bits[indice_ou_slice] = bit_ou_bits.bits
                 elif isinstance(bit_ou_bits, (list, tuple)):
-                    if not all((not isinstance(b) for b in bit_ou_bits)):
+                    if not all((isinstance(b, Bit) for b in bit_ou_bits)):
                         raise TypeError("Un code binaire ne doit être constitué que de Bit")
                     self._bits[indice_ou_slice] = bit_ou_bits
         else:
@@ -77,7 +77,7 @@ class CodeBinaire:
 
     def __eq__(self, code_binaire: Self):
 
-        if not isinstance(code_binaire, CodeBinaire):
+        if not isinstance(code_binaire, CodeBinaire) or len(code_binaire) != len(self):
             return False
 
         return all((self._bits[i] == code_binaire.bits[i] for i in range(len(code_binaire))))

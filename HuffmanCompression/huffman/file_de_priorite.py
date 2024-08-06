@@ -96,7 +96,7 @@ class FileDePriorite:
     def __repr__(self):
         if self.est_vide:
             return "FileDePriorite ()"
-        return f"FileDePriorite ({', '.join(map(str,self._elements))})"
+        return f"FileDePriorite({', '.join(map(str,self._elements))})"
 
 class FileDePrioriteVideErreur(Exception):
     """

@@ -63,4 +63,9 @@ def test_TypeError(un_code):
     
     with pytest.raises(TypeError):
         un_code.ajouter(1)
-        
+
+def test_repr(un_code):
+    assert repr(un_code) == "CodeBinaire(Bit.BIT_0, Bit.BIT_1, Bit.BIT_0)"
+
+def test_str(un_code):
+    assert str(un_code) == "0 1 0"

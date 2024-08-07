@@ -44,7 +44,6 @@ class ArbreHuffman:
             self._fils_droit = None
         elif (not element and not nb_occurrences) and (fils_gauche and fils_droit) and (fils_droit is not fils_gauche) :
             self._element = None
-            self._nb_occ = None
             self._fils_gauche = fils_gauche
             self._fils_droit = fils_droit
             self._nb_occ = fils_gauche.nb_occurrences + fils_droit.nb_occurrences
@@ -152,7 +151,7 @@ class ArbreHuffman:
             if not self.est_une_feuille:
                 return False
 
-            return self.element == autre_arbre.element
+            return self.nb_occurrences == autre_arbre.nb_occurrences
         if self.est_une_feuille:
             return False
 

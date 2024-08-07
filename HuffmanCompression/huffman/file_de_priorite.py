@@ -71,7 +71,7 @@ class FileDePriorite:
             Élément en tête de file
         """
         if self.est_vide:
-            raise FileDePrioriteVideErreur("Opération impossible car la liste est vide.")
+            raise FileDePrioriteVideErreur("Opération impossible car la file est vide.")
 
         return self._elements.pop(0)
 

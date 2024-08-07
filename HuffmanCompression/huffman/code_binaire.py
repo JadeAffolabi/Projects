@@ -81,6 +81,9 @@ class CodeBinaire:
             return False
 
         return all((self._bits[i] == code_binaire.bits[i] for i in range(len(code_binaire))))
+    
+    def __add__(self, code: Self):
+        return CodeBinaire(*(self.bits+code.bits))
 
     def __hash__(self):
 

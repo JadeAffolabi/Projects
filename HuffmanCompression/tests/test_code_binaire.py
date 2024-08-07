@@ -45,6 +45,9 @@ def test_eq(un_code):
     assert un_code != code2
     assert un_code != code3
 
+def test_add(un_code):
+    assert un_code+CodeBinaire(Bit.BIT_1) == CodeBinaire(Bit.BIT_0, Bit.BIT_1, Bit.BIT_0, Bit.BIT_1)
+
 def test_hash(un_code):
     code1 = CodeBinaire(Bit.BIT_0, Bit.BIT_1, Bit.BIT_0)
     assert hash(un_code) == hash(code1)

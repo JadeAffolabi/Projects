@@ -180,37 +180,37 @@ def compresser(destination: io.RawIOBase, source: io.RawIOBase) -> None:
 def decompresser(destination: io.RawIOBase, source: io.RawIOBase) -> None:
 
     octets_identifiant = source.read(1) + source.read(1)
-    if not octets_identifiant == b'\x34\x32':
-        print("Ce fichier ne peut pas être décompressé en utilisant 'huff'.")
-    
-    octet_etat_fichier = source.read(1)
-    if octet_etat_fichier == b'\x00':
-        print("Le fichier est vide")
-    elif octet_etat_fichier == b'\x01':
-        print("Fichier avec octet unique")
-        nb_octets_original = int.from_bytes(source.read(NB_OCTETS_CODAGE_INT), 'big')
-        stats = pickle.load(source)
-        i = 0
-        while i < nb_octets_original:
-            destination.write(stats.elements[0])
-            i += 1
+    if octets_identifiant == b'\x34\x32':
+        octet_etat_fichier = source.read(1)
+        if octet_etat_fichier == b'\x00':
+            print("Le fichier est vide")
+        elif octet_etat_fichier == b'\x01':
+            print("Fichier avec octet unique")
+            nb_octets_original = int.from_bytes(source.read(NB_OCTETS_CODAGE_INT), 'big')
+            stats = pickle.load(source)
+            i = 0
+            while i < nb_octets_original:
+                destination.write(stats.elements[0])
+                i += 1
+        else:
+            nb_octets_original = int.from_bytes(source.read(NB_OCTETS_CODAGE_INT), 'big')
+            stats = pickle.load(source)
+            arbre = arbre_de_huffman(stats)
+            temp_arbre = arbre
+            i = 0
+            while i < nb_octets_original:
+                code_binaire = format(int.from_bytes(source.read(1),'big'), 'b')[::-1]
+                while len(code_binaire) < 8:
+                    code_binaire += '0'
+                for bit in code_binaire:
+                    if bit == '0':
+                        temp_arbre = temp_arbre.fils_gauche
+                    elif bit == '1':
+                        temp_arbre = temp_arbre.fils_droit
+                    
+                    if temp_arbre.est_une_feuille:
+                        destination.write(temp_arbre.element)
+                        temp_arbre = arbre
+                        i +=1
     else:
-        nb_octets_original = int.from_bytes(source.read(NB_OCTETS_CODAGE_INT), 'big')
-        stats = pickle.load(source)
-        arbre = arbre_de_huffman(stats)
-        temp_arbre = arbre
-        i = 0
-        while i < nb_octets_original:
-            code_binaire = format(int.from_bytes(source.read(1),'big'), 'b')[::-1]
-            while len(code_binaire) < 8:
-                code_binaire += '0'
-            for bit in code_binaire:
-                if bit == '0':
-                    temp_arbre = temp_arbre.fils_gauche
-                elif bit == '1':
-                    temp_arbre = temp_arbre.fils_droit
-                
-                if temp_arbre.est_une_feuille:
-                    destination.write(temp_arbre.element)
-                    temp_arbre = arbre
-                    i +=1
+        print("Ce fichier ne peut pas être décompressé en utilisant 'huff'.") 

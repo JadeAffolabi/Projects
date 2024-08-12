@@ -71,4 +71,4 @@ def test_repr(un_code):
     assert repr(un_code) == "CodeBinaire(Bit.BIT_0, Bit.BIT_1, Bit.BIT_0)"
 
 def test_str(un_code):
-    assert str(un_code) == "0 1 0"
+    assert str(un_code) == "010"

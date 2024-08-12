@@ -7,7 +7,7 @@ from huffman.compteur import Compteur
 from huffman.arbre_huffman import ArbreHuffman
 from huffman.code_binaire import Bit, CodeBinaire
 
-# A 65, B 66, C 67, D 68, E 69, F 70, G 71
+# A b'A', B b'B', C b'C', D b'D', E b'E', F b'F', G b'G'
 import itertools
 octets_a_compresser = b"BACFGABDDACEACG"
 donnees_compressees = bytes([52,50,2] + \
@@ -22,26 +22,26 @@ def flux_donnees():
 def test_statistiques(flux_donnees):
     stat, nb = statistiques(flux_donnees)
     assert nb == 15
-    assert stat.sont_egaux(Compteur({65:4, 66:2, 67:3, 68:2, 69:1, 70:1, 71:2}))
+    assert stat.sont_egaux(Compteur({b'A':4, b'B':2, b'C':3, b'D':2, b'E':1, b'F':1, b'G':2}))
 
 def test_arbre_huffman(flux_donnees):
     stat, nb = statistiques(flux_donnees)
     arbre_huffman_calcule = arbre_de_huffman(stat)
     arbre_huffman_voulu = ArbreHuffman(
         fils_gauche = ArbreHuffman(
-                fils_gauche = ArbreHuffman(67,3),
-                fils_droit = ArbreHuffman(65,4)
+                fils_gauche = ArbreHuffman(b'C',3),
+                fils_droit = ArbreHuffman(b'A',4)
         ),
         fils_droit = ArbreHuffman(
                 fils_gauche = ArbreHuffman(
-                    fils_gauche = ArbreHuffman(66,2),
-                    fils_droit = ArbreHuffman(68,2)
+                    fils_gauche = ArbreHuffman(b'B',2),
+                    fils_droit = ArbreHuffman(b'D',2)
                 ),
             fils_droit = ArbreHuffman(
-                fils_gauche = ArbreHuffman(71,2),
+                fils_gauche = ArbreHuffman(b'G',2),
                 fils_droit = ArbreHuffman(
-                    fils_gauche = ArbreHuffman(69,1),
-                    fils_droit = ArbreHuffman(70,1)
+                    fils_gauche = ArbreHuffman(b'E',1),
+                    fils_droit = ArbreHuffman(b'F',1)
                 )
             )
         )
@@ -52,10 +52,10 @@ def test_codes_binaire(flux_donnees):
     stat, nb = statistiques(flux_donnees)
     arbre = arbre_de_huffman(stat)
     codes_binaires_calcules = codes_binaire(arbre)
-    assert len(codes_binaires_calcules[65]) == 2
-    assert len(codes_binaires_calcules[66]) == 3
-    assert len(codes_binaires_calcules[67]) == 2
-    assert len(codes_binaires_calcules[68]) == 3
-    assert len(codes_binaires_calcules[69]) == 4
-    assert len(codes_binaires_calcules[70]) == 4
-    assert len(codes_binaires_calcules[71]) == 3
+    assert len(codes_binaires_calcules[b'A']) == 2
+    assert len(codes_binaires_calcules[b'B']) == 3
+    assert len(codes_binaires_calcules[b'C']) == 2
+    assert len(codes_binaires_calcules[b'D']) == 3
+    assert len(codes_binaires_calcules[b'E']) == 4
+    assert len(codes_binaires_calcules[b'F']) == 4
+    assert len(codes_binaires_calcules[b'G']) == 3

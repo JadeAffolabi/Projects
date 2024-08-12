@@ -100,7 +100,7 @@ class CodeBinaire:
 
     def __str__(self):
         description = [str(b.value) for b in self._bits]
-        return " ".join(description)
+        return "".join(description)
 
 class AuMoinsUnBitErreur(Exception):
     """ Exception Pour éviter d'avoir un code binaire vide"""

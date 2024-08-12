@@ -1,1 +1,1 @@
-__all__ = ['code_binaire', 'compteur', 'file_de_priorite']
+__all__ = ['code_binaire', 'compteur', 'file_de_priorite', 'arbre_huffman']

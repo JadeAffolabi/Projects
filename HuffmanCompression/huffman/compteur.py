@@ -33,6 +33,10 @@ class Compteur:
     def elements(self) -> list:
         """méthode elements"""
         return list(self._dict.keys())
+    
+    @property
+    def le_dict(self) -> dict:
+        return self._dict
 
     def __elements_x_frequents(self, x_frequents = lambda x,y : x == y):
         res = [list(self._dict.keys())[0]]

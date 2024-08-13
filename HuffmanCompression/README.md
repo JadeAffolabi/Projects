@@ -12,6 +12,12 @@ cd HuffmanCompression
 2.Install the required dependencies:
 ```bash
 poetry install
+or
+pip install -r requirements.txt
+```
+3.Activate virtual environment:
+```bash
+poetry shell
 ```
 
 ## Usage

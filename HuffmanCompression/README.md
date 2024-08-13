@@ -6,11 +6,12 @@ This project implements the Huffman algorithm, a popular method for lossless dat
 To get started, follow these steps:
 1.Clone the repository:
 ```bash
-git clone ...
+git clone https://github.com/JadeAffolabi/Python-Projects.git
+cd HuffmanCompression
 ```
-2.Create a virtual environment:
+2.Install the required dependencies:
 ```bash
-virtual environment command
+poetry install
 ```
 
 ## Usage
@@ -18,10 +19,10 @@ The project provides a command-line interface for compressing and decompressing 
 ### Compress a File
 To compress a file, use the following command:
 ```bash
-huffman c file_name
+python3 huff.py c file_name compressed_file_name
 ```
 ### Decompress a File
 To decompress a file, use the following command:
 ```bash
-huffman d file_name.huff
+python3 huff.py d compressed_file_name decompressed_file_name
 ```

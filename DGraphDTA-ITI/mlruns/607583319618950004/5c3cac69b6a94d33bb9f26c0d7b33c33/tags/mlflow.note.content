@@ -1,0 +1,1 @@
+Model testé avec 500 epochs sur le dataset davis. On remarque un overfitting à plus de 300 epochs.

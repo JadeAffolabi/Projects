@@ -1,0 +1,16 @@
+artifact_uri: file:///home/baaffolabi/dgraphdta/mlruns/607583319618950004/e5f01f4761494b859245587f1df7b1c0/artifacts
+deleted_time: 1745901701256
+end_time: null
+entry_point_name: ''
+experiment_id: '607583319618950004'
+lifecycle_stage: deleted
+run_id: e5f01f4761494b859245587f1df7b1c0
+run_name: model_dv_bin
+run_uuid: e5f01f4761494b859245587f1df7b1c0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745389720587
+status: 1
+tags: []
+user_id: baaffolabi

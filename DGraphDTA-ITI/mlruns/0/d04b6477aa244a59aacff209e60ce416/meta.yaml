@@ -1,0 +1,16 @@
+artifact_uri: file:///home/baaffolabi/DGraphDTA/mlruns/0/d04b6477aa244a59aacff209e60ce416/artifacts
+deleted_time: 1744100101551
+end_time: 1743549571740
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: d04b6477aa244a59aacff209e60ce416
+run_name: model_test_mesonet
+run_uuid: d04b6477aa244a59aacff209e60ce416
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1743549571530
+status: 3
+tags: []
+user_id: baaffolabi

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/baaffolabi/dgraphdta/mlruns/524264131970255633/ba559c79385d47478beff37209cc8064/artifacts
+end_time: 1744526887141
+entry_point_name: ''
+experiment_id: '524264131970255633'
+lifecycle_stage: active
+run_id: ba559c79385d47478beff37209cc8064
+run_name: model_kb&dv
+run_uuid: ba559c79385d47478beff37209cc8064
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744526129964
+status: 3
+tags: []
+user_id: baaffolabi

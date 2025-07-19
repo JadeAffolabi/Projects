@@ -1,0 +1,16 @@
+artifact_uri: file:///home/baaffolabi/dgraphdta/mlruns/607583319618950004/7d33a7f3d4da4896a725b1decea06110/artifacts
+deleted_time: 1745243514040
+end_time: 1744747651171
+entry_point_name: ''
+experiment_id: '607583319618950004'
+lifecycle_stage: deleted
+run_id: 7d33a7f3d4da4896a725b1decea06110
+run_name: model_davis_5fold_500
+run_uuid: 7d33a7f3d4da4896a725b1decea06110
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744723298492
+status: 4
+tags: []
+user_id: fangzhou

@@ -1,0 +1,9 @@
+CI MSE Pearson
+
+Davis:
+
+DGraphDTA 	GCN & GCN 	0.904 	0.202 	0.867
+
+KIBA:
+
+DGraphDTA 	GCN & GCN 	0.904 	0.126 	0.903

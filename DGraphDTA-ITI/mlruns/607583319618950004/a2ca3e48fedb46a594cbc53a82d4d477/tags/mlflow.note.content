@@ -1,0 +1,2 @@
+Premier modèle entraîné sur la fusion des datasets davis et kiba. La loss est extrêmement élevé.
+Cela s'explique par un oubli de transformation des données du fichier Y (davis).

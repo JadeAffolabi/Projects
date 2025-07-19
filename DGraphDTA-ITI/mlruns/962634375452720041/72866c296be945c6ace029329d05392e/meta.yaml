@@ -1,0 +1,15 @@
+artifact_uri: file:///home/fangzhou/dgraphdta/mlruns/962634375452720041/72866c296be945c6ace029329d05392e/artifacts
+end_time: 1745227110107
+entry_point_name: ''
+experiment_id: '962634375452720041'
+lifecycle_stage: active
+run_id: 72866c296be945c6ace029329d05392e
+run_name: model_davis_5fold_10_Cross
+run_uuid: 72866c296be945c6ace029329d05392e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745227001487
+status: 4
+tags: []
+user_id: fangzhou

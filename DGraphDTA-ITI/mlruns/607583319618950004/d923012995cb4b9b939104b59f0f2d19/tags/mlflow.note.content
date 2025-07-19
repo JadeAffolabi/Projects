@@ -1,0 +1,1 @@
+Modèle entraîné en passant d'abord le dataset davis puis le dataset kiba au script d'entraînement.

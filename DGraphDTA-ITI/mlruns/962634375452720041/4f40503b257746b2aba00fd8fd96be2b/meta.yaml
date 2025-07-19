@@ -1,0 +1,15 @@
+artifact_uri: file:///home/fangzhou/dgraphdta/mlruns/962634375452720041/4f40503b257746b2aba00fd8fd96be2b/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '962634375452720041'
+lifecycle_stage: active
+run_id: 4f40503b257746b2aba00fd8fd96be2b
+run_name: model_kiba_5fold_300_Cross
+run_uuid: 4f40503b257746b2aba00fd8fd96be2b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745390676161
+status: 1
+tags: []
+user_id: fangzhou

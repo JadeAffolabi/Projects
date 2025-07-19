@@ -1,0 +1,7 @@
+numpy
+pillow
+opencv-python==4.2.0.32
+Cython
+tensorflow==1.15.0
+grpcio==1.16.0
+matplotlib

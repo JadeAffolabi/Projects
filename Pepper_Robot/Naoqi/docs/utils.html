@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module utils</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">utils</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:%5C%5Cwsl.localhost%5Cubuntu%5Chome%5Cvassili%5Cdocuments%5Cnaoqi%5Cutils.py">\\wsl.localhost\ubuntu\home\vassili\documents\naoqi\utils.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="PIL.Image.html">PIL.Image</a><br>
+</td><td class="multicolumn"><a href="cv2.html">cv2</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-calculerDistance"><strong>calculerDistance</strong></a>(image, face, focal_length=600, real_width=15)</dt><dd><span class="code">Calcule&nbsp;la&nbsp;distance&nbsp;estimée&nbsp;entre&nbsp;la&nbsp;caméra&nbsp;et&nbsp;un&nbsp;visage&nbsp;détecté.<br>
+&nbsp;<br>
+:param&nbsp;image:&nbsp;L'image&nbsp;d'entrée<br>
+:param&nbsp;face:&nbsp;Les&nbsp;coordonnées&nbsp;du&nbsp;visage&nbsp;(x,&nbsp;y,&nbsp;largeur,&nbsp;hauteur)<br>
+:param&nbsp;focal_length:&nbsp;Distance&nbsp;focale&nbsp;en&nbsp;pixels&nbsp;(à&nbsp;ajuster&nbsp;selon&nbsp;la&nbsp;caméra)<br>
+:param&nbsp;real_width:&nbsp;Largeur&nbsp;réelle&nbsp;du&nbsp;visage&nbsp;en&nbsp;cm&nbsp;(valeur&nbsp;moyenne&nbsp;:&nbsp;15&nbsp;cm)<br>
+:return:&nbsp;Distance&nbsp;estimée&nbsp;en&nbsp;cm</span></dd></dl>
+ <dl><dt><a name="-coucou_bras_droit"><strong>coucou_bras_droit</strong></a>(motion, vitesse=0.2, repetitions=3)</dt><dd><span class="code">Lève&nbsp;le&nbsp;bras&nbsp;droit&nbsp;et&nbsp;effectue&nbsp;un&nbsp;mouvement&nbsp;de&nbsp;coucou&nbsp;avec&nbsp;le&nbsp;robot&nbsp;Nao.<br>
+&nbsp;<br>
+:param&nbsp;motion:&nbsp;Instance&nbsp;du&nbsp;proxy&nbsp;ALMotion<br>
+:param&nbsp;vitesse:&nbsp;Vitesse&nbsp;du&nbsp;mouvement&nbsp;(par&nbsp;défaut&nbsp;0.2)<br>
+:param&nbsp;repetitions:&nbsp;Nombre&nbsp;d'oscillations&nbsp;pour&nbsp;le&nbsp;coucou</span></dd></dl>
+ <dl><dt><a name="-deplacerVersVisage"><strong>deplacerVersVisage</strong></a>(motion, distance, angle)</dt><dd><span class="code">Déplace&nbsp;le&nbsp;robot&nbsp;vers&nbsp;la&nbsp;position&nbsp;d'un&nbsp;visage&nbsp;détecté.<br>
+&nbsp;<br>
+:param&nbsp;motion:&nbsp;Proxy&nbsp;ALMotion<br>
+:param&nbsp;distance:&nbsp;Distance&nbsp;à&nbsp;parcourir&nbsp;en&nbsp;cm<br>
+:param&nbsp;angle:&nbsp;Angle&nbsp;à&nbsp;ajuster&nbsp;en&nbsp;radians&nbsp;pour&nbsp;faire&nbsp;face&nbsp;au&nbsp;visage</span></dd></dl>
+ <dl><dt><a name="-detecterVisage"><strong>detecterVisage</strong></a>(image, tts)</dt><dd><span class="code">Détecte&nbsp;les&nbsp;visages&nbsp;dans&nbsp;une&nbsp;image&nbsp;donnée.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;(numpy.ndarray):&nbsp;L'image&nbsp;source&nbsp;en&nbsp;format&nbsp;BGR.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tts&nbsp;(object):&nbsp;Proxy&nbsp;ALTextToSpeech&nbsp;pour&nbsp;les&nbsp;notifications&nbsp;vocales.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;au&nbsp;moins&nbsp;un&nbsp;visage&nbsp;est&nbsp;détecté,&nbsp;False&nbsp;sinon.</span></dd></dl>
+ <dl><dt><a name="-extrairesVisages"><strong>extrairesVisages</strong></a>(image, tts)</dt><dd><span class="code">Détecte&nbsp;et&nbsp;extrait&nbsp;les&nbsp;visages&nbsp;d'une&nbsp;image&nbsp;en&nbsp;utilisant&nbsp;un&nbsp;modèle&nbsp;Haar&nbsp;Cascade.<br>
+&nbsp;<br>
+:param&nbsp;image:&nbsp;Image&nbsp;en&nbsp;entrée&nbsp;(format&nbsp;BGR).<br>
+:param&nbsp;tts:&nbsp;Optionnel,&nbsp;instance&nbsp;de&nbsp;Text-To-Speech&nbsp;pour&nbsp;les&nbsp;messages&nbsp;audio.</span></dd></dl>
+ <dl><dt><a name="-prendreCapture"><strong>prendreCapture</strong></a>(video, tts)</dt><dd><span class="code">Prend&nbsp;une&nbsp;capture&nbsp;d'image&nbsp;à&nbsp;partir&nbsp;de&nbsp;la&nbsp;caméra&nbsp;connectée&nbsp;au&nbsp;robot.<br>
+&nbsp;<br>
+:param&nbsp;video:&nbsp;Proxy&nbsp;ALVideoDevice&nbsp;pour&nbsp;accéder&nbsp;à&nbsp;la&nbsp;caméra.<br>
+:param&nbsp;tts:&nbsp;Proxy&nbsp;ALTextToSpeech&nbsp;pour&nbsp;les&nbsp;notifications&nbsp;vocales.<br>
+:raises&nbsp;Exception:&nbsp;Si&nbsp;une&nbsp;erreur&nbsp;survient&nbsp;lors&nbsp;de&nbsp;la&nbsp;capture&nbsp;d'image.</span></dd></dl>
+ <dl><dt><a name="-reculerDepuisVisage"><strong>reculerDepuisVisage</strong></a>(motion, distance, angle)</dt><dd><span class="code">Déplace&nbsp;le&nbsp;robot&nbsp;dans&nbsp;le&nbsp;chemin&nbsp;inverse&nbsp;depuis&nbsp;la&nbsp;position&nbsp;d'un&nbsp;visage&nbsp;détecté.<br>
+&nbsp;<br>
+:param&nbsp;motion:&nbsp;Proxy&nbsp;ALMotion<br>
+:param&nbsp;distance:&nbsp;Distance&nbsp;à&nbsp;parcourir&nbsp;en&nbsp;cm<br>
+:param&nbsp;angle:&nbsp;Angle&nbsp;à&nbsp;ajuster&nbsp;en&nbsp;radians&nbsp;pour&nbsp;faire&nbsp;face&nbsp;au&nbsp;visage</span></dd></dl>
+</td></tr></table>
+</body></html>
